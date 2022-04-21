@@ -23,6 +23,6 @@ public class Logger {
     }
 
     public void showLog() {
-        logList.forEach((n) -> System.out.println(n));
+        logList.forEach(System.out::println);
     }
 }

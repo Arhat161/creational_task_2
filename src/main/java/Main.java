@@ -23,12 +23,12 @@ public class Main {
         List<Integer> allValues = Arrays.asList(new Integer[listSizeN]);
         logger.log("Создаём и наполняем список");
 
-        String listAllValuesForLog = "";
+        StringBuilder listAllValuesForLog = new StringBuilder();
 
         for (int i = 0; i < allValues.size(); i++) {
             int randomInt = random.nextInt(highBorderM);
             allValues.set(i, randomInt);
-            listAllValuesForLog += randomInt + " ";
+            listAllValuesForLog.append(randomInt).append(" ");
         }
 
         logger.log("Вот случайный список: " + listAllValuesForLog);
@@ -45,9 +45,9 @@ public class Main {
         List<Integer> result = filter.filterOut(allValues);
 
         logger.log("Выводим результат на экран");
-        String listResultForLog = "";
-        for (int i = 0; i < result.size(); i++) {
-            listResultForLog += result.get(i) + " ";
+        StringBuilder listResultForLog = new StringBuilder();
+        for (Integer res : result) {
+            listResultForLog.append(res).append(" ");
         }
         logger.log("Отфильтрованный список: " + listResultForLog);
 
